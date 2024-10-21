@@ -92,11 +92,13 @@ This project uses JWT (JSON Web Token) for authentication.
 | Method | Endpoint               | Description                           |
 |--------|------------------------|---------------------------------------|
 | POST   | `/api/token/`           | Obtain JWT token                      |
-| POST   | `/api/token/refresh/`   | Refresh the JWT token                 |
+| POST   | `/api/token/refresh/`   | Refresh the JWT token                 
+|POST   | `/api-auth/login/`       | Login with username and password |
 | GET    | `/api/bucketlists/`     | List all bucket lists (authenticated) |
 | POST   | `/api/bucketlists/`     | Create a new bucket list              |
 | GET    | `/api/bucketlists/<id>/`| Retrieve a specific bucket list       |
 | PUT    | `/api/bucketlists/<id>/`| Update a specific bucket list         |
 | DELETE | `/api/bucketlists/<id>/`| Delete a specific bucket list         |
+
 
 
