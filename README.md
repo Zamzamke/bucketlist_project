@@ -1,6 +1,5 @@
 # BucketList API
-
-This project is a Django REST API for managing personal bucket lists. Users can create, view, update, and delete bucket list items. Authentication is required to access the API.
+A bucket list is a list of things that one has not done before but wants to do before dying.This is an API for an online bucket list using the Django Rest Framework.This API creates a foundation of an app that will help you track things you want to do before you die. Users can create, view, update, and delete bucket list items.
 
 ## Features
 
@@ -13,8 +12,6 @@ This project is a Django REST API for managing personal bucket lists. Users can 
 
 - **Django**: Backend framework.
 - **Django REST Framework (DRF)**: For building the API.
-- **JWT**: For authentication.
-- **SQLite**: Default database.
   
 ## Installation
 
@@ -61,31 +58,6 @@ Ensure you have the following installed on your machine:
 
 7. Access the API at `http://127.0.0.1:8000/api/`.
 
-## Authentication
-
-This project uses JWT (JSON Web Token) for authentication.
-
-### Obtain a Token
-- You can obtain a JWT token by sending a `POST` request to the `/api/token/` endpoint with the following data:
-    ```json
-    {
-        "username": "your_username",
-        "password": "your_password"
-    }
-    ```
-
-- Use the returned token for authenticated requests by adding the token to the `Authorization` header:
-    ```
-    Authorization: Bearer <your_access_token>
-    ```
-
-### Refresh Token
-- To refresh your token, send a `POST` request to `/api/token/refresh/` with the refresh token:
-    ```json
-    {
-        "refresh": "<your_refresh_token>"
-    }
-    ```
 
 ## API Endpoints
 
