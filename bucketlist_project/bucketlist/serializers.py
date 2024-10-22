@@ -1,14 +1,9 @@
 from rest_framework import serializers
-from .models import BucketList
+from .models import BucketList,BucketListItem
 from django.contrib.auth.models import User
 
-class BucketListSerializer(serializers.ModelSerializer):
-    owner = serializers.ReadOnlyField(source='owner.username')  # Add this line
 
-    class Meta:
-        model = BucketList
-        fields = '__all__'
-
+# Handle serialization for the user
 class UserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
 
@@ -23,3 +18,18 @@ class UserSerializer(serializers.ModelSerializer):
             password=validated_data['password']
         )
         return user
+    
+#To handle serialization for bucket list Items
+class BucketListItemSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = BucketListItem
+        fields = ['id', 'title', 'description', 'category', 'priority', 'status', 'bucketlist']
+
+ #Handle serialization for bucket lists
+class BucketListSerializer(serializers.ModelSerializer):
+    owner = serializers.ReadOnlyField(source='owner.username')
+    items = BucketListItemSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = BucketList
+        fields = ['id', 'name', 'owner', 'items']
