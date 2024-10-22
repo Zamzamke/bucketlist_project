@@ -18,13 +18,14 @@ class UserSerializer(serializers.ModelSerializer):
             password=validated_data['password']
         )
         return user
-    
+
+
 #To handle serialization for bucket list Items
 class BucketListItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = BucketListItem
         fields = ['id', 'title', 'description', 'category', 'priority', 'status', 'bucketlist']
-
+ 
  #Handle serialization for bucket lists
 class BucketListSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
@@ -33,3 +34,6 @@ class BucketListSerializer(serializers.ModelSerializer):
     class Meta:
         model = BucketList
         fields = ['id', 'name', 'owner', 'items']
+
+
+ 
