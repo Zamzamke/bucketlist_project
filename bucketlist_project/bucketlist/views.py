@@ -1,6 +1,6 @@
 from rest_framework import generics,permissions, status
 from .models import BucketList, BucketListItem
-from .serializers import BucketListSerializer,BucketListItemSerializer ,#UserSerializer
+from .serializers import BucketListSerializer,BucketListItemSerializer 
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
@@ -24,15 +24,6 @@ class BucketListDetailView(generics.RetrieveUpdateDestroyAPIView):
 
     def get_queryset(self):
         return BucketList.objects.filter(owner=self.request.user)  # Only allow access to the user's bucket list
-
-#Handle user registration
-#class RegisterUser(APIView):
-    #def post(self, request, *args, **kwargs):
-       # serializer = UserSerializer(data=request.data)
-       # if serializer.is_valid():
-            #serializer.save()
-            #return Response(serializer.data, status=status.HTTP_201_CREATED)
-        #return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 # Add an item to a specific bucket list

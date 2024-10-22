@@ -19,18 +19,23 @@ class BucketListItem(models.Model):
         ('travel', 'Travel'),
         ('career', 'Career'),
         ('personal', 'Personal'),
+        ('adventure', 'Adventure'),
     )
     
     STATUS_CHOICES = (
         ('pending', 'Pending'),
         ('completed', 'Completed'),
+        ('not_started', 'Not Started'),
+        ('in_progress', 'In Progress'),
+        ('on_hold', 'On Hold'),
+        ('cancelled', 'Cancelled'),
     )
 
     bucketlist = models.ForeignKey(BucketList, related_name="items", on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     description = models.TextField(null=True, blank=True)
     category = models.CharField(max_length=50, choices=CATEGORY_CHOICES, default='personal')
-    priority = models.IntegerField(default=0)  # You can set this to range from 1 (high) to 5 (low)
+    priority = models.IntegerField()  
     status = models.CharField(max_length=50, choices=STATUS_CHOICES, default='pending')
 
     def __str__(self):
