@@ -3,10 +3,9 @@ A bucket list is a list of things that one has not done before but wants to do b
 
 ## Features
 
-- User registration and authentication (using JWT).
+- User registration and login
 - Create, update, and delete bucket list items.
-- View all bucket lists for the authenticated user.
-- Token-based authentication for API access.
+- View all bucket lists for a user.
   
 ## Technologies Used
 
@@ -71,6 +70,7 @@ Ensure you have the following installed on your machine:
 | GET    | `/api/bucketlists/<id>/`| Retrieve a specific bucket list       |
 | PUT    | `/api/bucketlists/<id>/`| Update a specific bucket list         |
 | DELETE | `/api/bucketlists/<id>/`| Delete a specific bucket list         |
+| GET  | `/bucketlists/{bucketlist_id}/items/` | Retrieves all items for a specific bucketlist |    
 
-
+[Screenshot of Bucketlist App](login.png "Bucketlist App Screenshot")
 
