@@ -1,16 +1,18 @@
 # BucketList API
-A bucket list is a list of things that one has not done before but wants to do before dying.This is an API for an online bucket list using the Django Rest Framework.This API creates a foundation of an app that will help you track things you want to do before you die. Users can create, view, update, and delete bucket list items.
+A bucket list is a list of things that one has not done before but wants to do before dying.This is an API for an online bucket list using the Django Rest Framework.This API creates a foundation of an app that will help you track things you want to do before you die. Users can create, view, update, and delete bucket list and add items.
 
 ## Features
 
-- User registration and login
+- User authentication
 - Create, update, and delete bucket list items.
 - View all bucket lists for a user.
+- Add and update items to a bucket list.
   
 ## Technologies Used
 
 - **Django**: Backend framework.
 - **Django REST Framework (DRF)**: For building the API.
+
   
 ## Installation
 
@@ -72,5 +74,4 @@ Ensure you have the following installed on your machine:
 | DELETE | `/api/bucketlists/<id>/`| Delete a specific bucket list         |
 | GET  | `/bucketlists/{bucketlist_id}/items/` | Retrieves all items for a specific bucketlist |    
 
-[Screenshot of Bucketlist App](login.png "Bucketlist App Screenshot")
 

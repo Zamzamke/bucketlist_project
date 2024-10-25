@@ -24,7 +24,7 @@ class UserSerializer(serializers.ModelSerializer):
 class BucketListItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = BucketListItem
-        fields = ['id', 'title', 'description', 'category', 'priority', 'status', 'bucketlist']
+        fields = ['id', 'title', 'description', 'category', 'priority', 'status',]
  
  #Handle serialization for bucket lists
 class BucketListSerializer(serializers.ModelSerializer):
